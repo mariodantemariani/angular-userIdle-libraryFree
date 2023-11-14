@@ -1,27 +1,49 @@
-# AngularTest
+# Implementing an Idle User Detector in Angular without external libraries
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.0.
+## Description
 
-## Development server
+This project was generated with Angular CLI version 17.0.1.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+It serves as a simple demonstration of detecting user inactivity using a service called IdleUserService. This detector is useful to identify and handle situations where the user has stopped interacting with the application.
 
-## Code scaffolding
+## How it works
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+This application listens for user activity and starts a countdown when the user becomes inactive. If the countdown reaches zero, it triggers an event indicating the user is idle.
 
-## Build
+## Project Structure
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+IdleUserTimes - An enum that holds the idle time and countdown time.
+IdleUserService - A service that listens to user activities, starts the idle timer, and emits an event when the user becomes inactive.
+AppComponent - The main component that uses IdleUserService to detect user inactivity and provides an option to reset the idle state.
 
-## Running unit tests
+## Features
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- User inactivity detection.
+- Free external libraries (like to ng-idle).
+- Easy to integrate and use in any Angular project.
 
-## Running end-to-end tests
+## Requirements
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+- Node.js
+- Angular CLI
 
-## Further help
+## Installation
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+1. Clone the repository:
+   ```
+   git clone https://github.com/mariodantemariani/angular-userIdle-libraryFree.git
+   ```
+2. Install the dependencies:
+   ```
+   npm install
+   ```
+3. Run the project:
+   ```
+   ng serve
+   ```
+
+## Usage
+
+## Contributing
+
+Contributions are welcome. Please open an issue if you find a bug or have any suggestions for improving the project.
