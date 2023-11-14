@@ -44,6 +44,8 @@ AppComponent - The main component that uses IdleUserService to detect user inact
 
 ## Usage
 
+Follow the steps indicates on the next medium's article: [medium](https://mariodante.medium.com/implementing-an-idle-user-detector-in-angular-without-external-libraries-598e75a8a8d4)
+
 ## Contributing
 
 Contributions are welcome. Please open an issue if you find a bug or have any suggestions for improving the project.
