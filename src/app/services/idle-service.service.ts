@@ -10,7 +10,7 @@ export class IdleUserService {
   private countdownId: any;
   private countdownValue!: number;
 
-  userInactive: Subject<boolean> = new Subject();
+  userInactive: Subject<boolean> = new Subject<boolean>();
   constructor() {
     this.reset();
     this.initListener();
@@ -27,6 +27,7 @@ export class IdleUserService {
   }
 
   reset() {
+    console.log('activity detected');
     clearTimeout(this.timeoutId);
     clearTimeout(this.countdownId);
     this.startIdleTimer();

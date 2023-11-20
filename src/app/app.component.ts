@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, Injector, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { IdleUserService } from './services/idle-service.service';
@@ -17,12 +17,13 @@ export class AppComponent implements OnInit {
   title = 'Idle User Service Example';
 
   isUserIdle: boolean = false;
+  idleUserService = Inject(IdleUserService);
 
-  constructor(private idleUserService: IdleUserService) {}
-
+  constructor(private injector: Injector) {}
   ngOnInit() {
+    this.idleUserService = this.injector.get(IdleUserService);
     this.idleUserService.userInactive.subscribe(
-      (isIdle) => (this.isUserIdle = isIdle)
+      (isIdle: any) => (this.isUserIdle = isIdle)
     );
   }
 
